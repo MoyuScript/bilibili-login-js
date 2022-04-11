@@ -1,5 +1,5 @@
 {
-  "name": "bilibili-login",
+  "name": "bilibili-login-js",
   "version": "1.0.0",
   "description": "b 站登录库。",
   "main": "./dist/index.js",
@@ -13,7 +13,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MoyuScript/bilibili-login.git"
+    "url": "git+https://github.com/MoyuScript/bilibili-login-js.git"
   },
   "lint-staged": {
     "src/**/*": [
@@ -28,9 +28,9 @@
   "author": "MoyuScript <i@moyu.moe>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MoyuScript/bilibili-login/issues"
+    "url": "https://github.com/MoyuScript/bilibili-login-js/issues"
   },
-  "homepage": "https://github.com/MoyuScript/bilibili-login#readme",
+  "homepage": "https://github.com/MoyuScript/bilibili-login-js#readme",
   "engines": {
     "node": ">=14"
   },

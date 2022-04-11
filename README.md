@@ -1,4 +1,4 @@
-# bilibili-login
+# bilibili-login-js
 
 b 站登录库。
 
@@ -14,17 +14,17 @@ b 站登录库。
 ## 安装
 
 ```bash
-$ pnpm add bilibili-login
+$ pnpm add bilibili-login-js
 
 # or
 
-$ npm install -S bilibili-login
+$ npm install -S bilibili-login-js
 ```
 
 ## 使用
 
 ```js
-import login from 'bilibili-login';
+import login from 'bilibili-login-js';
 import got from 'got';
 
 // 返回的是 Cookie 字符串，里面包含认证凭据，后续可用于请求 B 站登录态 API。
