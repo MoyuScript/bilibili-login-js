@@ -32,6 +32,7 @@ async function waitForLogin({
 }): Promise<boolean> {
   let time = 0;
   let scanned = false;
+  const pollingInterval = 1000;
 
   while (time < 60000 * 2) {
     const resp = await getLoginInfo(oauthKey);
@@ -50,8 +51,8 @@ async function waitForLogin({
       // 其他错误
       throw new Error('登录错误');
     }
-    await sleep(3000);
-    time += 3000;
+    await sleep(pollingInterval);
+    time += pollingInterval;
   }
 
   // 二维码过期

@@ -1,6 +1,7 @@
 import qrcodeLogin from './qrcode-login.js';
 import { CookieString } from './types';
 import inquirer from 'inquirer';
+import terminalKit from 'terminal-kit';
 
 /**
  * 登录哔哩哔哩。
