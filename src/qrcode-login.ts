@@ -67,7 +67,8 @@ export default async function qrcodeLogin(): Promise<CookieString> {
     }
     const { oauthKey, url } = resp.data as { oauthKey: string; url: string };
 
-    terminal.clear();
+    terminal.fullscreen(true);
+    terminal.hideCursor(true);
     qrcode.generate(url, {
       small: true,
     });
@@ -82,7 +83,8 @@ export default async function qrcodeLogin(): Promise<CookieString> {
 
     if (loginResult) {
       light.updateStatus(2, '登录成功。');
-      light.destroy();
+      terminal.hideCursor(false);
+      terminal.fullscreen(false);
       break;
     }
   }
