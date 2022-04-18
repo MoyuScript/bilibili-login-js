@@ -1,7 +1,7 @@
 import qrcodeLogin from './qrcode-login.js';
 import { CookieString } from './types';
 import inquirer from 'inquirer';
-import terminalKit from 'terminal-kit';
+import passwordLogin from './password-login.js';
 
 /**
  * 登录哔哩哔哩。
@@ -9,7 +9,7 @@ import terminalKit from 'terminal-kit';
  * @returns 登录成功后的 Cookie 字符串。
  */
 export default async function loginBilibili(
-  type?: 'qrcode'
+  type?: 'qrcode' | 'password' | 'sms'
 ): Promise<CookieString> {
   let type1 = type;
 
@@ -28,7 +28,6 @@ export default async function loginBilibili(
           {
             name: '密码登录',
             value: 'password',
-            disabled: '开发中',
           },
           {
             name: '短信验证码登录',
@@ -44,6 +43,9 @@ export default async function loginBilibili(
   switch (type1) {
     case 'qrcode':
       return qrcodeLogin();
+
+    case 'password':
+      return passwordLogin();
 
     default:
       throw new Error(`不支持的登录类型 type="${type1}"`);
