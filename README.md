@@ -4,8 +4,9 @@ b 站登录库。
 
 目前已支持登录方式：
 
-+ ✅二维码登录
-+ ▶️唤起网页登录（开发中）
++ ✅二维码登录。
++ ✅账号密码登录。
++ ▶️短信验证码登录（开发中）。
 
 ## 二维码登录演示
 
@@ -39,3 +40,16 @@ const resp = await got('https://api.bilibili.com/x/web-interface/nav', {
 
 console.log(`欢迎，${resp.data.uname}！`);
 ```
+
+## API
+
+### `login(type?: 'qrcode' | 'password')`
+
+登录。
+
+`type` 取值：
+
++ `qrcode`: 二维码登录。
++ `password`: 账号密码登录。
+
+如果不传入 `type`，将会提示用户选择登录方式。

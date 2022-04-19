@@ -5,11 +5,11 @@ import passwordLogin from './password-login.js';
 
 /**
  * 登录哔哩哔哩。
- * @param type 登录方式：`qrcode` 二维码。
+ * @param type 登录方式：`qrcode` 二维码。`password` 密码登录。
  * @returns 登录成功后的 Cookie 字符串。
  */
 export default async function loginBilibili(
-  type?: 'qrcode' | 'password' | 'sms'
+  type?: 'qrcode' | 'password'
 ): Promise<CookieString> {
   let type1 = type;
 
