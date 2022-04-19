@@ -3,6 +3,9 @@ import { waitForCaptcha } from './captcha.js';
 import crypto from 'crypto';
 import inquirer from 'inquirer';
 import fetch, { cookieJar } from './fetch.js';
+import terminalKit from 'terminal-kit';
+
+const term = terminalKit.terminal;
 
 async function getRsaConfig(): Promise<any> {
   return fetch('https://passport.bilibili.com/x/passport-login/web/key').json();
@@ -65,7 +68,7 @@ export default async function passwordLogin(): Promise<string> {
     ).json()) as any;
 
     if (result.code !== 0) {
-      console.error(result.message);
+      term.error.brightRed(`登录失败：${result.message}\n`);
     } else {
       break;
     }
